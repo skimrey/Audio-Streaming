@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Streaming</title>
+</head>
+<body>
+    <h1>Audio Streaming</h1>
+    <ul id="audioList">
+        <!-- Audio items will be added here dynamically -->
+    </ul>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+
+    <ul id="sequentialAudioList">
+        <li><a href="#" class="song-link" data-id="1">Song 1</a></li>
+        <li><a href="#" class="song-link" data-id="2">Song 2</a></li>
+        <li><a href="#" class="song-link" data-id="3">Song 3</a></li>
+        <li><a href="#" class="song-link" data-id="4">Song 4</a></li>
+    </ul>
+
+    <script>
+        // JavaScript code to fetch and play audio
+        document.addEventListener("DOMContentLoaded", function () {
+            const audioList = document.getElementById("audioList");
+            const audioPlayer = document.getElementById("audioPlayer");
+            const sequentialAudioList = document.getElementById("sequentialAudioList");
+
+            // Handle clicks on sequential song links
+            sequentialAudioList.addEventListener("click", (event) => {
+                if (event.target.classList.contains("song-link")) {
+                    const audioId = event.target.getAttribute("data-id");
+                    audioPlayer.src = `/audio/${audioId}`;
+                    audioPlayer.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

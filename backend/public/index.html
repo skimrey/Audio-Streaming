@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Streaming App</title>
+</head>
+<body>
+    <h1>Audio Streaming App</h1>
+
+    <!-- Audio player -->
+    <audio controls id="audioPlayer">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Song list -->
+    <ul id="songList">
+        <li>
+            <button class="playButton" data-song-id="1">Play Song 1</button>
+        </li>
+        <li>
+            <button class="playButton" data-song-id="2">Play Song 2</button>
+        </li>
+        <!-- Add more songs as needed -->
+    </ul>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songList = document.getElementById('songList');
+        
+        // Function to fetch and play audio from the database
+        async function playAudioFromDatabase(songId) {
+            try {
+                // Fetch audio data from the database based on songId
+                const response = await fetch(`/audio/${songId}`);
+                
+                if (response.ok) {
+                    const audioBlob = await response.blob();
+                    const audioUrl = URL.createObjectURL(audioBlob);
+
+                    // Set the audio player source to the retrieved audio URL
+                    audioPlayer.src = audioUrl;
+                    audioPlayer.play();
+                } else {
+                    console.error('Error fetching audio:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        // Add event listeners to play buttons
+        const playButtons = document.querySelectorAll('.playButton');
+        playButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const songId = button.getAttribute('data-song-id');
+                playAudioFromDatabase(songId);
+            });
+        });
+    </script>
+</body>
+</html>
