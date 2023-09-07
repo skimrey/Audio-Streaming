@@ -8,18 +8,14 @@ const app = express();
 
 // Create a PostgreSQL pool
 const pool = new Pool({
-  user: "bubtrxjh",
-  host: "bubble.db.elephantsql.com",
-  database: "bubtrxjh",
-  password: "zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2",
-  port: 5432,
+  connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
 app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
 });
 
-app.get('/audio', async (req, res) => {
+app.get('/audio/*', async (req, res) => {
     const audioId = req.params.id;
   
     try {
