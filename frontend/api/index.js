@@ -2,8 +2,10 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/vercel", (req, res) => {
   res.send("Express on Vercel");
+  console.log("aafter ");
+  
 });
 
 app.get("/home", (req, res) => {
