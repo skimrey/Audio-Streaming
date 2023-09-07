@@ -2,6 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); 
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
+app.use(cors());
 app.use(express.static('public'));
 // Serve the HTML page
 app.get('/', (req, res) => {
