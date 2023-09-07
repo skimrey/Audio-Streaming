@@ -11,7 +11,7 @@ const pool = new Pool({
 });
 
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
 });
 
