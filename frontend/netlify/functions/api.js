@@ -3,14 +3,14 @@
 const express = require('express');
 const { Pool } = require('pg');
 const serverless = require('serverless-http');
-
+const cors = require('cors');
 const app = express();
 
 // Create a PostgreSQL pool
 const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
-app.use(express.static('public'));
+app.use(cors());
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
 });
