@@ -8,7 +8,11 @@ const app = express();
 
 // Create a PostgreSQL pool
 const pool = new Pool({
-  connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
+  user: "bubtrxjh",
+  host: "bubble.db.elephantsql.com",
+  database: "bubtrxjh",
+  password: "zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2",
+  port: 5432,
 });
 app.use(express.static('public'));
 app.get('/', (req, res) => {
