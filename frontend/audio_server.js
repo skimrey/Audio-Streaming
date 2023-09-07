@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
-app.use(express.static('public'));
+app.use(express.static(''));
 // Serve the HTML page
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
