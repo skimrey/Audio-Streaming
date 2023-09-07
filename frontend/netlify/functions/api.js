@@ -12,7 +12,7 @@ const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
 
-api.get('/audio/:id', async (req, res) => {
+api.get('api/audio/:id', async (req, res) => {
   const audioId = req.params.id;
 
   try {
