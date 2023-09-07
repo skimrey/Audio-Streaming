@@ -72,7 +72,7 @@ app.get('/audio/:id', async (req, res) => {
       const result = await pool.query('SELECT audio_content FROM audio_metadata WHERE id = $1', [audioId]);
       console.log('Incoming request with ID:', audioId);
       if (result.rows.length === 0) {
-          res.status(404).send('Audio not founeeeed');
+          res.status(404).send('Audio not found');
           return;
       }
 
