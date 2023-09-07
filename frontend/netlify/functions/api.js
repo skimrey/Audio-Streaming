@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 import serverless from 'serverless-http';
-import { Pool } from 'pg'; // Import Pool from 'pg'
+import { Pool } from 'pg';
 
 const api = express();
 const router = Router();
@@ -29,8 +29,14 @@ router.get('/audio/:id', async (req, res) => {
     // Set the appropriate content type for audio
     res.set('Content-Type', 'audio/mpeg');
 
-    // Send the audio content to the client
-    res.send(audioContent);
+    // Create a read stream from the audio content
+    const audioStream = new Readable();
+    audioStream._read = () => {}; // Dummy implementation required for Readable streams
+    audioStream.push(audioContent);
+    audioStream.push(null); // End the stream
+
+    // Pipe the audio stream to the response object to stream the audio to the client
+    audioStream.pipe(res);
   } catch (err) {
     console.error(err);
     res.status(500).send('Internal Server Error');
