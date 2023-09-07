@@ -12,7 +12,11 @@ const pool = new Pool({
 });
 app.use(express.static('public'));
 // Serve the HTML page
-
+app.get('/', (req, res) => {
+    const indexPath = path.join(__dirname, '../frontend/public/index.html');
+    console.log('indexPath:', indexPath); // Add this line for debugging
+    res.sendFile(indexPath);
+  });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
