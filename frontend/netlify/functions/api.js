@@ -1,5 +1,3 @@
-import express, {Router} from 'express';
-import serverless from 'serverless-http';
 const express = require('express');
 const { Pool } = require('pg');
 const serverless = require('serverless-http');
