@@ -12,10 +12,6 @@ const pool = new Pool({
 });
 app.use(express.static('public'));
 // Serve the HTML page
-app.get('/', (req, res) => {
-    const indexPath = path.join(__dirname, '../frontend/public/index.html');
-    res.sendFile(indexPath);
-  });
 
 
 app.listen(port, () => {
