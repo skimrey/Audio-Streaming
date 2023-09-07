@@ -2,7 +2,7 @@
 
 import express, { Router } from 'express';
 import serverless from 'serverless-http';
-
+const { Pool } = require('pg');
 const api = express();
 
 const router = Router();
