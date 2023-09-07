@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solomon Develops for the Web</title>
+    <link rel="icon" href="heart.png">
+
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    <style>
+        /* Custom CSS */
+        #audioPlayer {
+            width: 100%; /* Make the audio player as wide as the track list table */
+            border: none; /* Remove border */
+            background-color: #F1F3F4; /* Set background color */
+            border-radius: 10px; /* Rounded edges */
+        }
+
+        /* Set a fixed size for carousel images */
+        .carousel .carousel-inner {
+            text-align: center;
+        }
+        
+        img {
+            max-width: 510px;
+            max-height: 510px;
+            margin: auto;
+        }
+
+        /* Customize the image carousel */
+        #imageCarousel {
+            background-color: black;
+            width: 510px;
+            height: 510px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px; /* Rounded edges */
+        }
+
+        /* Style carousel navigation icons */
+        .carousel-control-prev, .carousel-control-next {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Style the carousel indicators */
+        .carousel-indicators li {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Style active indicator */
+        .carousel-indicators .active {
+            background-color: white;
+        }
+
+        /* Style the image overlay */
+        .carousel-caption {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Show caption on hover */
+        .carousel-caption:hover {
+            opacity: 1;
+        }
+
+        .ekko-lightbox-container img {
+        max-width: 100%;
+        max-height: 100%; /* Adjust the maximum height as needed */
+    }
+
+        /* Style the image carousel items */
+        .carousel-item {
+            background: no-repeat center center fixed;
+            background-size: cover;
+        }
+        /* Add styling for the video player */
+        .video-player {
+            border-radius: 10px; /* Rounded edges */
+        }
+
+        /* Additional styling for guiboard */
+        .guiboard-container {
+            background-color: #F1F3F4;
+            padding: 20px;
+            border-radius: 10px; /* Rounded edges */
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .modal-header,
+.modal-backdrop {
+    display: none !important;
+}
+
+    </style>
+</head>
+<body class="guibody">
+    <main class="container mt-4">
+        <section id="about" class="portfolio-section">
+            <p><img src="solomoncolab.png" alt=""></p>
+             <br>
+        </section>
+
+        <section id="audio" class="portfolio-section">
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><a href="https://solomonkimrey.com" style="color: rgb(0, 0, 0);">Music</a></h3>
+                    <ul class="list-group rounded">
+                        <li class="list-group-item"><iframe style="border: 0px; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=3950913529/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://solomonkimrey.bandcamp.com/track/sketch-of-the-one-who-sits-by-the-dock">Sketch of the One Who Sits By the Dock by Solomon Kimrey</a></iframe></li>
+                        <li class="list-group-item"><a href="#" class="song-link" data-id="4">Papermaking #9</a></li>
+                        <li class="list-group-item"><a href="#" class="song-link" data-id="3">On Happy Accident</a></li>
+                        <li class="list-group-item"><a href="#" class="song-link" data-id="1">Sketch of the One Who Sits by the Dock</a></li>
+                        <li class="list-group-item"><a href="#" class="song-link" data-id="5">A Great Rushing</a></li>
+                    </ul>
+                    <audio class="mt-3 video-player" id="audioPlayer" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                    <div class= "col-md-6" style="border">
+                    <h3><a href="https://github.com/skimrey/Spellbook" style="color: black;">Spellbook</a></h3>
+                         <div class="guiboard-container">
+                    <p class="">Spellbook is the best way to type. Traditional stenography relies on phonetic spellings and a stenograph. The average typist is more familiar with spelling words the way they're spelled.
+                    </p><p class="">So I started conjuring.</p>
+                    <p class="">Sitting at around 3300 spellings, this is a dictionary for and extension of a word chording program in the Windows scripting language AutoHotKey.</p>
+                    <p class="">Initially devised to support my work as a transcriptionist, Spellbook is now an ongoing diary :)</p>
+                </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="guiboard" class="bg-light justify-content-evenly bg-white mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="guiboard-container">
+                        <h3 class="guiboard-title"><a href="https://guiboard.com" style="color: black;">Guiboard</a></h3>
+                        <p class="guiboard-text">The Guiboard is a MIDI controller/instrument designed to 
+                            mimic the layout of notes on a fretboard. As a typist and guitarist, I decided the most immediate way to interface with MIDI would be not-a-piano. Pianos complicate chord/scale patterns by changing their shapes across keys. A fretboard or isomorphic keyboard allows for constant visual intervals. </p>
+                    <br>
+                            <iframe class="col-12" height="240" src="https://www.youtube.com/embed/Qh_0uDtIgWY?si=2PHODADT2eqC5IOG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <!-- Image Carousel -->
+                    <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="https://f4.bcbits.com/img/a3653230268_10.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Image 1">
+                                    <img src="https://f4.bcbits.com/img/a3653230268_10.jpg" alt="Image 1">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://f4.bcbits.com/img/a2028823677_10.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Image 2">
+                                    <img src="https://f4.bcbits.com/img/a2028823677_10.jpg" alt="Image 2">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://f4.bcbits.com/img/a2956946643_10.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Image 3">
+                                    <img src="https://f4.bcbits.com/img/a2956946643_10.jpg" alt="Image 3">
+                                </a>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br><br>
+    </main>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script>
+        // Initialize Bootstrap Lightbox
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const audioPlayer = document.getElementById("audioPlayer");
+            const sequentialAudioList = document.getElementById("sequentialAudioList");
+
+            // Handle clicks on sequential song links
+            sequentialAudioList.addEventListener("click", (event) => {
+                if (event.target.classList.contains("song-link")) {
+                    const audioId = event.target.getAttribute("data-id");
+                    audioPlayer.src = `audio/${audioId}`;
+                    audioPlayer.play();
+                }
+            });
+
+            // Handle navigation between sections
+            const portfolioSections = document.querySelectorAll(".portfolio-section");
+            const navLinks = document.querySelectorAll("nav a");
+
+            navLinks.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const targetSectionId = link.getAttribute("data-section");
+                    portfolioSections.forEach((section) => {
+                        section.style.display = "none";
+                    });
+                    document.getElementById(targetSectionId).style.display = "block";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
