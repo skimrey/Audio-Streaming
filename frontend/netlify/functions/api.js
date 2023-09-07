@@ -3,12 +3,13 @@ const { Pool } = require('pg');
 const serverless = require('serverless-http');
 const cors = require('cors');
 const app = express();
+const router = Router();
 
 // Create a PostgreSQL pool
 const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
-app.use(cors());
+
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
@@ -57,5 +58,5 @@ app.get('/audio/:id', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
+api.use('/api/', router);
 module.exports.handler = serverless(app);
