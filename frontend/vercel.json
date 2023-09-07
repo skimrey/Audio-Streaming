@@ -1,3 +1,13 @@
 {
-    "rewrites": [{ "source": "/audio_server.js", "destination": "/" }]
+    "routes": [
+      {
+        "src": "/api/.*",
+        "dest": "audio_server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/audio_server.js"
+      }
+    ]
   }
+  
