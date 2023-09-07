@@ -1,14 +1,10 @@
 {
+    "version": 2,
+    "name": "name-of-your-vercel-app",
     "builds": [
-        {
-            "src": "audio_server.js",
-            "use": "@vercel/node"
-        }
+      { "src": "audio_server.js", "use": "@vercel/node" }
     ],
     "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "audio_server.js"
-        }
+      { "src": "/(.*)", "dest": "/audio_server.js" }
     ]
   }
