@@ -13,7 +13,7 @@ const pool = new Pool({
 app.use(express.static('public'));
 // Serve the HTML page
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html'); // Update the path to your HTML file
+    res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
 });
 
 app.get('/audio', async (req, res) => {

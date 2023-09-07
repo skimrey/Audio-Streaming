@@ -11,7 +11,7 @@ const pool = new Pool({
   connectionString: 'postgres://bubtrxjh:zzEdCEA7lXwGx7Aexz_XlHoqzmRan2K2@bubble.db.elephantsql.com:5432/bubtrxjh',
 });
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html'); // Update the path to your HTML file
+    res.sendFile(__dirname + '/index.html'); // Update the path to your HTML file
 });
 
 app.get('/audio', async (req, res) => {
