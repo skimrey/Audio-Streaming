@@ -1,11 +1,15 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const express = require("express");
 
-app.get('/vercel', (req, res) => {
-  res.json({ message: 'Hello from Vercel Express API!' });
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get("/home", (req, res) => {
+  res.send("HOME!");
+});
+
+app.listen(5000, () => {
+  console.log("Running on port 5000!");
 });
