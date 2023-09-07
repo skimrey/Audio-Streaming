@@ -213,7 +213,7 @@
             sequentialAudioList.addEventListener("click", (event) => {
                 if (event.target.classList.contains("song-link")) {
                     const audioId = event.target.getAttribute("data-id");
-                    audioPlayer.src = `api/audio/${audioId}`;
+                    audioPlayer.src = `audio/${audioId}`;
                     audioPlayer.play();
                 }
             });
