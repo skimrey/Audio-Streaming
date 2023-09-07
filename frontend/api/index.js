@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     const indexPath = path.join(__dirname, '../frontend/public/index.html');
     console.log('indexPath:', indexPath); // Add this line for debugging
-    res.sendFile('../public/index.html');
+    res.sendFile('/public/index.html');
   });
 
 app.listen(port, () => {
