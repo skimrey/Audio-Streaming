@@ -35,7 +35,7 @@ app.get('/audio_list', async (req, res) => {
   }
 });
 
-app.get('/audio/:id', async (req, res) => {
+router.get('/audio/:id', async (req, res) => {
   const audioId = req.params.id;
 
   try {
@@ -60,7 +60,7 @@ app.get('/audio/:id', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
+router.get('/hello', (req, res) => res.send('Hello World!'));
 api.get('/audio/:id', async (req, res) => {
   const audioId = req.params.id;
 
