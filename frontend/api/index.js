@@ -6,8 +6,9 @@ const pool = new Pool({
 });
 
 module.exports = async (req, res) => {
+  
   const { id } = req.query; // Vercel handles query parameters differently
-
+  console.log('Incoming request with ID:', id);
   try {
     // Fetch audio content from your PostgreSQL database based on the ID
     const result = await pool.query('SELECT audio_content FROM audio_metadata WHERE id = $1', [id]);
