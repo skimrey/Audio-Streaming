@@ -70,7 +70,7 @@ app.get('/audio/:id', async (req, res) => {
   try {
       // Fetch audio content from your PostgreSQL database based on the ID
       const result = await pool.query('SELECT audio_content FROM audio_metadata WHERE id = $1', [audioId]);
-
+      console.log('Incoming request with ID:', id);
       if (result.rows.length === 0) {
           res.status(404).send('Audio not found');
           return;
